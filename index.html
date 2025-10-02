@@ -3,445 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSkillForge | Digital Learning Library</title>
+    <title>GranaSave - Digital Grain Bank</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-       :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #8b5cf6;
-            --accent: #ec4899;
-            --light: #f3f4f6;
-            --dark: #1f2937;
-           --darker: #111827;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --error: #ef4444;
-            --radius: 12px;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --secondary: #FF9800;
+            --accent: #FFC107;
+            --light: #F5F5F5;
+            --dark: #333333;
+            --gray: #757575;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
             color: var(--dark);
-            background-color: #fafafa;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Merriweather', serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
         }
 
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 20px;
         }
 
         /* Header & Navigation */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            background-color: var(--white);
             box-shadow: var(--shadow);
-            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        nav {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
+            gap: 10px;
             font-size: 1.5rem;
+            font-weight: 700;
             color: var(--primary);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 25px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
-            transition: var(--transition);
-            position: relative;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
         .auth-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 15px;
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
+            padding: 10px 20px;
             border-radius: var(--radius);
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s;
             border: none;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--primary);
             border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
         }
 
         .btn-outline:hover {
             background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
+            color: var(--white);
         }
 
         /* Hero Section */
         .hero {
-            padding: 8rem 0 5rem;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 80px 0;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: var(--dark);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
 
-        .search-bar {
-            display: flex;
-            width: 100%;
-            max-width: 600px;
-            margin: 2rem 0;
-        }
-
-        .search-bar input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: 2px solid #ddd;
-            border-radius: var(--radius) 0 0 var(--radius);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .search-bar input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .search-bar button {
-            padding: 1rem 1.5rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .search-bar button:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        /* Resources Section */
-        .resources {
-            padding: 5rem 0;
-            background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%);
-        }
-
-        .category-filters {
+        .hero-buttons {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .category-filter {
-            padding: 0.5rem 1.5rem;
-            background: white;
-            border: 2px solid #ddd;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .category-filter.active, .category-filter:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .resource-card {
-            background: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15);
-        }
-
-        .resource-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .resource-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .resource-card:hover .resource-img img {
-            transform: scale(1.05);
-        }
-
-        .resource-content {
-            padding: 1.5rem;
-        }
-
-        .resource-tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--light);
-            color: var(--dark);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .resource-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .resource-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        /* Community Section */
-        .community {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .stories-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .story-card {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .story-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .story-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 1rem;
-        }
-
-        .story-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .btn-light {
-            background: white;
+            background: var(--white);
             color: var(--primary);
         }
 
         .btn-light:hover {
             background: var(--light);
-            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            background: var(--primary-light);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon i {
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        /* How It Works */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: var(--primary-light);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 20%;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        /* Dashboard Preview */
+        .dashboard-preview {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .dashboard-header {
+            background: var(--dark);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dashboard-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red {
+            background: #FF5F57;
+        }
+
+        .dot.yellow {
+            background: #FFBD2E;
+        }
+
+        .dot.green {
+            background: #28CA42;
+        }
+
+        .dashboard-content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .dashboard-widget {
+            border: 1px solid #e0e0e0;
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .widget-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .widget-header h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        .grain-list {
+            list-style: none;
+        }
+
+        .grain-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .grain-item:last-child {
+            border-bottom: none;
+        }
+
+        .grain-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grain-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Market Section */
+        .market-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--gray);
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .market-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .market-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .market-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .grain-type {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .change {
+            font-size: 0.9rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            background: #E8F5E9;
+            color: var(--primary);
+        }
+
+        .change.negative {
+            background: #FFEBEE;
+            color: #F44336;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
         }
 
         /* Footer */
         footer {
-            background: var(--darker);
-            color: white;
-            padding: 4rem 0 2rem;
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 0 30px;
         }
 
-        .footer-grid {
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
 
         .footer-links {
@@ -449,466 +468,429 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: #cbd5e1;
+            color: #CCCCCC;
             text-decoration: none;
-            transition: var(--transition);
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: white;
+            color: var(--white);
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
+            color: var(--white);
+            font-size: 1.2rem;
         }
 
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
+        .copyright {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
             .nav-links {
-                display: none;
+                gap: 15px;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
-            .features-grid, .resources-grid, .stories-container {
+            .steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .step {
+                width: 100%;
+            }
+
+            .dashboard-content {
                 grid-template-columns: 1fr;
             }
 
-            .cta-buttons, .auth-buttons {
-                flex-direction: column;
-                align-items: center;
+            .market-tabs {
+                flex-wrap: wrap;
             }
         }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow);
-                transform: translateY(-100%);
-                opacity: 0;
-                pointer-events: none;
-                transition: var(--transition);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: all;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate {
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-
-        /* Dark mode support */
-        /* @media (prefers-color-scheme: dark) {
-            body {
-                background: var(--darker);
-                color: white;
-            }
-            
-            .feature-card, .resource-card {
-                background: var(--dark);
-                color: white;
-            }
-            
-            .hero {
-                background: linear-gradient(135deg, var(--darker) 0%, #1e3a8a 100%);
-            }
-            
-            .resources {
-                background: linear-gradient(to bottom, #1e293b 0%, #334155 100%);
-            }
-        } */
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>TechSkillForge</span>
-                </a>
-                
+            <div class="navbar">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>GranaSave</span>
+                </div>
                 <div class="nav-links">
                     <a href="#features">Features</a>
-                    <a href="#resources">Resources</a>
-                    <a href="#community">Community</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#market">Market</a>
                     <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                
                 <div class="auth-buttons">
-                    <a href="#" class="btn btn-outline">Sign In</a>
-                    <a href="#" class="btn btn-primary">Sign Up</a>
+                    <button class="btn btn-outline">Log In</button>
+                    <button class="btn btn-primary">Sign Up</button>
                 </div>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="animate">Master Tech Skills with Our Digital Library</h1>
-                <p class="animate delay-1">Access tutorials, textbooks, inspirational stories, and discoveries all in one platform designed for the modern learner.</p>
-                
-                <div class="search-bar animate delay-2">
-                    <input type="text" placeholder="Search for tutorials, resources, or topics...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                
-                <div class="animate delay-3">
-                    <a href="#resources" class="btn btn-primary">Explore Resources</a>
-                    <a href="#community" class="btn btn-outline">Join Community</a>
-                </div>
+            <h1>Store Smart, Sell Smarter</h1>
+            <p>Transform your grain harvest into digital assets. Store securely, access loans, and trade efficiently with GranaSave Digital Grain Bank.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-light">Get Started</button>
+                <button class="btn btn-outline" style="border-color: white; color: white;">Watch Demo</button>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="section" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Our Digital Library</h2>
-                <p>We provide cutting-edge learning resources tailored to modern tech enthusiasts</p>
+                <h2>Why Choose GranaSave?</h2>
+                <p>Our platform empowers farmers with financial flexibility and market access</p>
             </div>
-            
             <div class="features-grid">
-                <div class="feature-card animate">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-digital-tachograph"></i>
                     </div>
-                    <h3>Comprehensive Resources</h3>
-                    <p>Access a vast collection of tutorials, textbooks, and learning materials across various tech domains.</p>
+                    <h3>Digital Grain Storage</h3>
+                    <p>Convert physical grain into secure digital tokens stored in your wallet. No more spoilage or storage costs.</p>
                 </div>
-                
-                <div class="feature-card animate delay-1">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-user-graduate"></i>
+                        <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <h3>Personalized Learning</h3>
-                    <p>Get recommendations based on your skill level, interests, and learning goals.</p>
+                    <h3>Instant Loans</h3>
+                    <p>Use your digital grain as collateral to access instant loans for seeds, equipment, or emergencies.</p>
                 </div>
-                
-                <div class="feature-card animate delay-2">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Stay Updated</h3>
-                    <p>Keep pace with the latest discoveries, trends, and innovations in the tech industry.</p>
+                    <h3>Smart Trading</h3>
+                    <p>Sell your grain at the best prices with real-time market data and direct buyer connections.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resources Section -->
-    <section class="resources" id="resources">
+    <!-- How It Works -->
+    <section class="section" id="how-it-works" style="background-color: #f0f7f0;">
         <div class="container">
             <div class="section-title">
-                <h2>Explore Our Resources</h2>
-                <p>Curated content to boost your tech skills and knowledge</p>
+                <h2>How GranaSave Works</h2>
+                <p>Four simple steps to transform your harvest into opportunities</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Deposit Grain</h3>
+                    <p>Take your harvest to a certified warehouse</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Digital Receipt</h3>
+                    <p>Receive digital tokens in your wallet</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Manage Assets</h3>
+                    <p>Store, sell, or use as loan collateral</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Trade & Profit</h3>
+                    <p>Sell when prices are favorable</p>
+                </div>
             </div>
             
-            <div class="category-filters">
-                <div class="category-filter active">All</div>
-                <div class="category-filter">Tutorials</div>
-                <div class="category-filter">Textbooks</div>
-                <div class="category-filter">Stories</div>
-                <div class="category-filter">Discoveries</div>
-            </div>
-            
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-img">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Development Tutorial">
+            <!-- Dashboard Preview -->
+            <div class="dashboard-preview">
+                <div class="dashboard-header">
+                    <div class="dashboard-dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
                     </div>
-                    <div class="resource-content">
-                        <span class="resource-tag">Tutorial</span>
-                        <h3 class="resource-title">Modern Web Development 2025</h3>
-                        <p>Learn the latest frameworks and tools for building responsive, dynamic websites.</p>
-                        <div class="resource-meta">
-                            <span><i class="far fa-clock"></i> 4h 20m</span>
-                            <span><i class="far fa-user"></i> Advanced</span>
-                        </div>
-                    </div>
+                    <span style="color: white; margin-left: 10px;">Farmer Dashboard - GranaSave</span>
                 </div>
-                
-                <div class="resource-card">
-                    <div class="resource-img">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="AI Textbook">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-tag">Textbook</span>
-                        <h3 class="resource-title">Artificial Intelligence Fundamentals</h3>
-                        <p>Comprehensive guide to AI concepts, machine learning, and neural networks.</p>
-                        <div class="resource-meta">
-                            <span><i class="far fa-file"></i> 320 pages</span>
-                            <span><i class="far fa-user"></i> Intermediate</span>
+                <div class="dashboard-content">
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <h3>My Grain Portfolio</h3>
+                            <span>Total Value: <strong>$4,250</strong></span>
                         </div>
+                        <ul class="grain-list">
+                            <li class="grain-item">
+                                <div class="grain-name">
+                                    <div class="grain-icon">
+                                        <i class="fas fa-wheat-alt" style="color: white; font-size: 0.8rem;"></i>
+                                    </div>
+                                    <span>Wheat</span>
+                                </div>
+                                <div class="grain-details">
+                                    <span>2.5 MT</span>
+                                    <span style="color: var(--primary); font-weight: bold;">$1,250</span>
+                                </div>
+                            </li>
+                            <li class="grain-item">
+                                <div class="grain-name">
+                                    <div class="grain-icon" style="background: #8D6E63;">
+                                        <i class="fas fa-seedling" style="color: white; font-size: 0.8rem;"></i>
+                                    </div>
+                                    <span>Maize</span>
+                                </div>
+                                <div class="grain-details">
+                                    <span>5 MT</span>
+                                    <span style="color: var(--primary); font-weight: bold;">$2,000</span>
+                                </div>
+                            </li>
+                            <li class="grain-item">
+                                <div class="grain-name">
+                                    <div class="grain-icon" style="background: #F9A825;">
+                                        <i class="fas fa-rice" style="color: white; font-size: 0.8rem;"></i>
+                                    </div>
+                                    <span>Rice</span>
+                                </div>
+                                <div class="grain-details">
+                                    <span>2 MT</span>
+                                    <span style="color: var(--primary); font-weight: bold;">$1,000</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-img">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Success Story">
-                    </div>
-                    <div class="resource-content">
-                        <span class="resource-tag">Inspirational Story</span>
-                        <h3 class="resource-title">From Beginner to Tech Lead in 3 Years</h3>
-                        <p>How Maria Rodriguez accelerated her career through focused learning.</p>
-                        <div class="resource-meta">
-                            <span><i class="far fa-clock"></i> 15 min read</span>
-                            <span><i class="far fa-heart"></i> Inspiring</span>
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <h3>Recent Transactions</h3>
                         </div>
+                        <ul class="grain-list">
+                            <li class="grain-item">
+                                <div>
+                                    <div>Deposit</div>
+                                    <div style="font-size: 0.8rem; color: var(--gray);">2.5 MT Wheat</div>
+                                </div>
+                                <div style="color: var(--primary);">+$1,250</div>
+                            </li>
+                            <li class="grain-item">
+                                <div>
+                                    <div>Loan Disbursed</div>
+                                    <div style="font-size: 0.8rem; color: var(--gray);">Collateral: 1 MT Maize</div>
+                                </div>
+                                <div style="color: var(--primary);">+$800</div>
+                            </li>
+                            <li class="grain-item">
+                                <div>
+                                    <div>Sale</div>
+                                    <div style="font-size: 0.8rem; color: var(--gray);">1.5 MT Rice</div>
+                                </div>
+                                <div style="color: #4CAF50;">+$750</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Section -->
-    <section class="community" id="community">
+    <!-- Market Section -->
+    <section class="section" id="market">
         <div class="container">
             <div class="section-title">
-                <h2>Community Stories</h2>
-                <p>Get inspired by success stories from our community members</p>
+                <h2>Grain Market Prices</h2>
+                <p>Real-time market data to help you make informed decisions</p>
             </div>
             
-            <div class="stories-container">
-                <div class="story-card">
-                    <div class="story-header">
-                        <div class="story-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+            <div class="market-tabs">
+                <div class="tab active">Today</div>
+                <div class="tab">Weekly</div>
+                <div class="tab">Monthly</div>
+                <div class="tab">Yearly</div>
+            </div>
+            
+            <div class="market-data">
+                <div class="market-card">
+                    <div class="market-card-header">
+                        <div class="grain-type">
+                            <div class="grain-icon">
+                                <i class="fas fa-wheat-alt" style="color: white; font-size: 0.8rem;"></i>
+                            </div>
+                            <span>Wheat</span>
                         </div>
-                        <div>
-                            <h4>Sarah Johnson</h4>
-                            <p>Software Engineer</p>
-                        </div>
+                        <div class="price">$210/MT</div>
                     </div>
-                    <p>"This platform helped me transition from marketing to tech. The structured learning paths and community support made all the difference!"</p>
+                    <div class="change">+2.4%</div>
                 </div>
                 
-                <div class="story-card">
-                    <div class="story-header">
-                        <div class="story-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                <div class="market-card">
+                    <div class="market-card-header">
+                        <div class="grain-type">
+                            <div class="grain-icon" style="background: #8D6E63;">
+                                <i class="fas fa-seedling" style="color: white; font-size: 0.8rem;"></i>
+                            </div>
+                            <span>Maize</span>
                         </div>
-                        <div>
-                            <h4>Michael Chen</h4>
-                            <p>Data Scientist</p>
-                        </div>
+                        <div class="price">$185/MT</div>
                     </div>
-                    <p>"The textbooks and tutorials here are incredibly up-to-date with industry trends. I landed my current job thanks to the AI specialization course."</p>
+                    <div class="change">+1.2%</div>
                 </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="#" class="btn btn-primary">Share Your Story</a>
+                
+                <div class="market-card">
+                    <div class="market-card-header">
+                        <div class="grain-type">
+                            <div class="grain-icon" style="background: #F9A825;">
+                                <i class="fas fa-rice" style="color: white; font-size: 0.8rem;"></i>
+                            </div>
+                            <span>Rice</span>
+                        </div>
+                        <div class="price">$320/MT</div>
+                    </div>
+                    <div class="change negative">-0.8%</div>
+                </div>
+                
+                <div class="market-card">
+                    <div class="market-card-header">
+                        <div class="grain-type">
+                            <div class="grain-icon" style="background: #5D4037;">
+                                <i class="fas fa-bread-slice" style="color: white; font-size: 0.8rem;"></i>
+                            </div>
+                            <span>Barley</span>
+                        </div>
+                        <div class="price">$195/MT</div>
+                    </div>
+                    <div class="change">+0.5%</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="cta">
+    <section class="cta">
         <div class="container">
-            <h2>Start Your Tech Journey Today</h2>
-            <p>Join thousands of learners who have accelerated their careers with our digital library</p>
-            
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-light">Create Free Account</a>
-                <a href="#" class="btn btn-outline">Explore Premium</a>
-            </div>
+            <h2>Ready to Transform Your Farming Business?</h2>
+            <p>Join thousands of farmers who are already using GranaSave to secure their harvests and maximize profits.</p>
+            <button class="btn btn-light">Create Your Account Now</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-column">
-                    <h3>TechSkillForge</h3>
-                    <p>Your digital library for tech skills, tutorials, textbooks, and inspirational stories.</p>
+                    <h3>GranaSave</h3>
+                    <p>Transforming agriculture through digital innovation. Empowering farmers with financial tools and market access.</p>
                     <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-column">
-                    <h3>Resources</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Textbooks</a></li>
-                        <li><a href="#">Inspirational Stories</a></li>
-                        <li><a href="#">Discoveries</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Market Prices</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
-                    <h3>Support</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Digital Storage</a></li>
+                        <li><a href="#">Grain Trading</a></li>
+                        <li><a href="#">Farm Loans</a></li>
+                        <li><a href="#">Warehouse Locator</a></li>
+                        <li><a href="#">Market Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Agriculture Street, Farmville</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@granasave.com</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 TechSkillForge. All rights reserved.</p>
-                <p>Designed by Cyber World Tech</p>
+            <div class="copyright">
+                <p>&copy; 2023 GranaSave Digital Grain Bank. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        // Category Filters
-        const filters = document.querySelectorAll('.category-filter');
-        filters.forEach(filter => {
-            filter.addEventListener('click', () => {
-                filters.forEach(f => f.classList.remove('active'));
-                filter.classList.add('active');
+        // Simple tab functionality for market data
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                });
                 
-                // Here you would typically filter the resources
-                // This is just a placeholder for the functionality
-                console.log(`Filtering by: ${filter.textContent}`);
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // In a real app, this would fetch new market data based on the selected timeframe
             });
         });
-
-        // Animation on scroll
-        const animatedElements = document.querySelectorAll('.animate');
         
+        // Simple animation for feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
+                    entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1 });
-        
-        animatedElements.forEach(element => {
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(element);
-        });
+        }, observerOptions);
 
-        // Simple search functionality
-        const searchInput = document.querySelector('.search-bar input');
-        const searchButton = document.querySelector('.search-bar button');
-        
-        searchButton.addEventListener('click', () => {
-            if (searchInput.value.trim() !== '') {
-                alert(`Searching for: ${searchInput.value}`);
-                // Here you would typically implement the search functionality
-            }
-        });
-        
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && searchInput.value.trim() !== '') {
-                alert(`Searching for: ${searchInput.value}`);
-                // Here you would typically implement the search functionality
-            }
-        });
-
-        // Dynamic content loading simulation
-        window.addEventListener('load', () => {
-            // Simulate loading user-specific content
-            setTimeout(() => {
-                console.log('Dynamic content loaded successfully');
-            }, 1500);
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(card);
         });
     </script>
 </body>
